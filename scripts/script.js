@@ -6,6 +6,15 @@ $(function() {
     $stop_counter = $( "#event-stop" ),
     counts = [ 0, 0, 0 ];
 
+
+
+    $("button").click(function(){
+      var x = $("p").position();
+      alert("Top: " + x.top + " Left: " + x.left);
+    });
+
+
+
   $( "#doge-meme-pic" ).draggable({
     start: function() {
       counts[ 0 ]++;
@@ -19,6 +28,8 @@ $(function() {
     stop: function() {
       counts[ 2 ]++;
       updateCounterStatus( $stop_counter, counts[ 2 ] );
+
+
     }
   });
 
@@ -39,6 +50,8 @@ function calculateWow (xyz){
     if(xyz < 500){
 
         console.log('not much wow (' + xyz +  ')');
+
+        $('#output-place').text('not much wow (' + xyz + ') ');
 
     }
     else {
